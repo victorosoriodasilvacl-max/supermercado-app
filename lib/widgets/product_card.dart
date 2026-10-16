@@ -79,30 +79,38 @@ class ProductCard extends StatelessWidget {
                 const SizedBox(height: 4),
                 Row(
                   children: [
-                    Text(
-                      formatCLP(product.price),
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 15,
-                        color: primary,
+                    Flexible(
+                      child: Text(
+                        formatCLP(product.price),
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          color: primary,
+                        ),
                       ),
                     ),
                     const SizedBox(width: 4),
-                    Text('/ ${product.unit}',
+                    Text('/${product.unit}',
                         style: TextStyle(
-                            fontSize: 11, color: Colors.grey.shade600)),
+                            fontSize: 10, color: Colors.grey.shade600)),
+                    if (product.isOnSale) ...[
+                      const SizedBox(width: 4),
+                      Flexible(
+                        child: Text(
+                          formatCLP(product.oldPrice!),
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontSize: 10,
+                            color: Colors.grey.shade500,
+                            decoration: TextDecoration.lineThrough,
+                          ),
+                        ),
+                      ),
+                    ],
                   ],
                 ),
-                if (product.isOnSale)
-                  Text(
-                    formatCLP(product.oldPrice!),
-                    style: TextStyle(
-                      fontSize: 11,
-                      color: Colors.grey.shade500,
-                      decoration: TextDecoration.lineThrough,
-                    ),
-                  ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 6),
                 SizedBox(
                   width: double.infinity,
                   height: 32,
