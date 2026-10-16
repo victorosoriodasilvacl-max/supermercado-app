@@ -9,6 +9,7 @@ import '../widgets/social_footer.dart';
 import 'branding_screen.dart';
 import 'cart_screen.dart';
 import 'product_photos_screen.dart';
+import 'welcome_screen.dart';
 
 class CatalogScreen extends StatefulWidget {
   const CatalogScreen({super.key});
@@ -78,6 +79,13 @@ class _CatalogScreenState extends State<CatalogScreen> {
             backgroundColor: tenant.primaryColor,
             foregroundColor: Colors.white,
             actions: [
+              IconButton(
+                icon: const Icon(Icons.logout_rounded),
+                tooltip: 'Cerrar sesión / ver bienvenida',
+                onPressed: () => Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (_) => const WelcomeScreen()),
+                ),
+              ),
               IconButton(
                 icon: const Icon(Icons.add_a_photo_outlined),
                 tooltip: 'Fotos y productos',
