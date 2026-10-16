@@ -223,28 +223,25 @@ class _CatalogScreenState extends State<CatalogScreen> {
             ),
           ),
           SliverToBoxAdapter(
-            child: Transform.translate(
-              offset: const Offset(0, -14),
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
-                child: Material(
-                  elevation: 4,
-                  borderRadius: BorderRadius.circular(14),
-                  shadowColor: Colors.black26,
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Buscar productos...',
-                      prefixIcon: const Icon(Icons.search),
-                      filled: true,
-                      fillColor: Colors.white,
-                      contentPadding: const EdgeInsets.symmetric(vertical: 0),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(14),
-                        borderSide: BorderSide.none,
-                      ),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(16, 14, 16, 0),
+              child: Material(
+                elevation: 3,
+                borderRadius: BorderRadius.circular(14),
+                shadowColor: Colors.black26,
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Buscar productos...',
+                    prefixIcon: const Icon(Icons.search),
+                    filled: true,
+                    fillColor: Colors.white,
+                    contentPadding: const EdgeInsets.symmetric(vertical: 0),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(14),
+                      borderSide: BorderSide.none,
                     ),
-                    onChanged: (v) => setState(() => _query = v),
                   ),
+                  onChanged: (v) => setState(() => _query = v),
                 ),
               ),
             ),
