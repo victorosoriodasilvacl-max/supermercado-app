@@ -74,7 +74,7 @@ class _CatalogScreenState extends State<CatalogScreen> {
         slivers: [
           SliverAppBar(
             pinned: true,
-            expandedHeight: 240,
+            expandedHeight: 190,
             backgroundColor: tenant.primaryColor,
             foregroundColor: Colors.white,
             actions: [
@@ -170,7 +170,7 @@ class _CatalogScreenState extends State<CatalogScreen> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(16, 50, 16, 46),
+                      padding: const EdgeInsets.fromLTRB(16, 50, 16, 28),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -224,7 +224,7 @@ class _CatalogScreenState extends State<CatalogScreen> {
           ),
           SliverToBoxAdapter(
             child: Transform.translate(
-              offset: const Offset(0, -26),
+              offset: const Offset(0, -14),
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
                 child: Material(
@@ -286,8 +286,8 @@ class _CatalogScreenState extends State<CatalogScreen> {
                   )
                 : SliverGrid(
                     gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
+                        const SliverGridDelegateWithMaxCrossAxisExtent(
+                      maxCrossAxisExtent: 190,
                       mainAxisSpacing: 14,
                       crossAxisSpacing: 14,
                       childAspectRatio: 0.62,
